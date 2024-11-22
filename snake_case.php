@@ -10,6 +10,7 @@ class SnakeCaseConverter {
         $snake = preg_replace("/[^a-zA-Z0-9 ]/", "", $snake);
         // Above we filter special characters (pregreplace) accepting only A-Za-z0-9 and empty spaces.
         // $snake = str_replace(" ","_", $snake); // Discarded. The reason : This command replaces white spaces for underscores but may return multiple underscores concatenated
+        $snake = trim($snake);
         $snake = preg_replace('/\s+/', '_', $snake); // Solved!! multiple spaces are replaced by a single underscore
         return $snake;
     }
